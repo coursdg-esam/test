@@ -1,0 +1,14 @@
+/* Feuille de styles GITHUB */
+body {
+  color: rgb(0 0 0);
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+}
+
+li {
+  margin-right: 10px;
+  color: rgb(0 0 255);
+}

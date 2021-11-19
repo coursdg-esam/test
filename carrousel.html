@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exemple #1 - jQUery</title>
+    <link rel="stylesheet" href="ui/css/galerie.css">
+    <script src="ui/js/jquery-3.6.0.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- création de la galerie -->
+    <script type="text/javascript">
+      const chemin = "./imagesContenu/";
+
+      let liste = ['carentan','lavande','mer'];
+      var nbIma = liste.length;
+
+      $('body').append('<ul class="galerie"></ul>');
+      for (let i=0;i<3;i++){
+        $('ul.galerie').prepend('<li><img src="'+chemin+liste[i]+'.jpg"</li>');
+      }
+      $('ul.galerie li').css('display','none');
+      $('ul.galerie li:first').css('display','block');
+
+      $('ul.galerie li:first').addClass('visible');
+      var cmpt = 0;
+      var compteur = 0;
+      $('ul li').each(function() {
+
+        $(this).on('click',function() {
+          $(this).css('display','none');
+          if (compteur < nbIma -1) {
+              compteur++;
+          } else {
+              compteur = 0;
+          }
+          $('ul li:eq('+compteur+')').css('display','block');
+        })
+      })
+    </script>
+  </body>
+</html>
